@@ -1,0 +1,9 @@
+// PerfiosDetailsDAO (interface) + PerfiosDetailsDAOImpl
+void insertCbsRecord(java.sql.Date dumpDate, String lotNo, String fileName, String lcpc, int noOfRecords);
+
+@Override
+public void insertCbsRecord(java.sql.Date dumpDate, String lotNo, String fileName, String lcpc, int noOfRecords) {
+    String sql = "INSERT INTO kycupdate.kyc_cbs_perfios_records "
+               + "(cbs_dump_date, lot_no, file_name, lcpc, no_of_records) VALUES (?,?,?,?,?)";
+    jdbcTemplate.update(sql, dumpDate, lotNo, fileName, lcpc, String.valueOf(noOfRecords));
+}
