@@ -1,0 +1,7 @@
+// PerfiosService (interface) + PerfiosServiceImpl
+void insertCbsRecord(java.sql.Date dumpDate, String lotNo, String fileName, String lcpc, int noOfRecords);
+
+@Override
+public void insertCbsRecord(java.sql.Date dumpDate, String lotNo, String fileName, String lcpc, int noOfRecords) {
+    perfiosDAO.insertCbsRecord(dumpDate, lotNo, fileName, lcpc, noOfRecords);
+}
